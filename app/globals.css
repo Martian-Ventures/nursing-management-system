@@ -1,0 +1,205 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary Colors */
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+
+  /* Secondary Colors */
+  --secondary: #64748b;
+  --secondary-foreground: #ffffff;
+
+  /* Status Colors */
+  --error: #ef4444;
+  --error-foreground: #ffffff;
+  --warning: #f59e0b;
+  --warning-foreground: #ffffff;
+  --success: #10b981;
+  --success-foreground: #ffffff;
+
+  /* Background Colors */
+  --background: #ffffff;
+  --foreground: #171717;
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+
+  /* Accent Colors */
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+
+  /* Healthcare Specific */
+  --health-primary: #3b82f6;
+  --health-secondary: #8b5cf6;
+  --health-accent: #06b6d4;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-error: var(--error);
+  --color-error-foreground: var(--error-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes flyIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flyOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* Tailwind utility classes for animations */
+.animate-fade-in {
+  @apply animate-[fadeIn_0.3s_ease-out];
+}
+
+.animate-fade-out {
+  @apply animate-[fadeOut_0.3s_ease-in];
+}
+
+.animate-fly-in {
+  @apply animate-[flyIn_0.2s_ease-out];
+}
+
+.animate-fly-out {
+  @apply animate-[flyOut_0.2s_ease-in];
+}
+
+.animate-slide-in {
+  @apply animate-[slideIn_0.3s_ease-out];
+}
+
+.animate-slide-out {
+  @apply animate-[slideOut_0.3s_ease-in];
+}
+
+.animate-scale-in {
+  @apply animate-[scaleIn_0.3s_ease-out];
+}
+
+.animate-scale-out {
+  @apply animate-[scaleOut_0.3s_ease-in];
+}
+
+/* Hover animations using Tailwind */
+.hover-lift {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+.hover-lift:hover {
+  @apply -translate-y-0.5 shadow-lg;
+}
+
+.hover-glow {
+  @apply transition-shadow duration-200 ease-in-out;
+}
+
+.hover-glow:hover {
+  @apply shadow-[0_0_20px_rgba(59,130,246,0.3)];
+}
+
+/* Loading animations using Tailwind */
+.animate-pulse {
+  @apply animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite];
+}
+
+.animate-spin {
+  @apply animate-[spin_1s_linear_infinite];
+}
